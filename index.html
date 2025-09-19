@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chaos Hunters Esports</title>
+  
+  <!-- Favicon Implementation using your existing logo -->
+  <!-- Modern browsers support PNG favicons directly -->
+  <link rel="icon" href="/chaoshunterslogo.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/chaoshunterslogo.png" type="image/png" sizes="16x16">
+  
+  <!-- Apple Touch Icon (iOS) -->
+  <link rel="apple-touch-icon" href="/chaoshunterslogo.png" sizes="180x180">
+  
+  <!-- Android Chrome Icons -->
+  <link rel="icon" href="/chaoshunterslogo.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="/chaoshunterslogo.png" sizes="512x512" type="image/png">
+  
+  <!-- Legacy ICO support (optional but recommended) -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#dc2626">
+  
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-black text-gray-200 font-sans scroll-smooth">
   <!-- Header / Navbar -->
   <header class="fixed w-full bg-gray-900 text-white shadow-lg z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
-      
+
       <!-- Logo + Brand -->
       <div class="flex items-center space-x-3">
-        <img src="chaoshunterslogo.png" 
-             alt="Chaos Hunters Logo" class="w-12 h-12 object-contain">
+        <img src="chaoshunterslogo.png" alt="Chaos Hunters Logo" class="w-12 h-12 object-contain">
         <span class="text-2xl font-bold">ChaosHuntersEsports</span>
       </div>
-      
+
       <!-- Navigation -->
       <nav class="hidden md:flex space-x-8 text-lg">
         <a href="#home" class="hover:text-red-500 transition">Home</a>
@@ -26,51 +46,97 @@
         <a href="#achievements" class="hover:text-red-500 transition">Achievements</a>
         <a href="#about" class="hover:text-red-500 transition">About Us</a>
         <a href="#community" class="hover:text-red-500 transition">Community</a>
-        <a href="#pack" class="hover:text-red-500 transition">Be Part of the Pack</a>
+        <a href="#pack" class="hover:text-red-500 transition">Pack</a>
       </nav>
-      
       <!-- Mobile Menu Button -->
       <div class="md:hidden">
-        <button class="focus:outline-none">
+        <button id="mobile-menu-button" class="p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation menu">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
+
+      <!-- Mobile Navigation Menu (hidden by default) -->
+      <nav id="mobile-menu" class="md:hidden hidden absolute top-full left-0 w-full bg-gray-900 shadow-lg z-50"
+        aria-label="Mobile navigation">
+        <div class="px-4 py-3 space-y-2">
+          <a href="#home" class="block px-4 py-3 text-white hover:bg-gray-700 border-b border-gray-600">Home</a>
+          <a href="#games" class="block px-4 py-3 text-white hover:bg-gray-700 border-b border-gray-600">Games</a>
+          <a href="#rosters" class="block px-4 py-3 text-white hover:bg-gray-700 border-b border-gray-600">Rosters</a>
+          <a href="#achievements"
+            class="block px-4 py-3 text-white hover:bg-gray-700 border-b border-gray-600">Achievements</a>
+          <a href="#about" class="block px-4 py-3 text-white hover:bg-gray-700 border-b border-gray-600">About Us</a>
+          <a href="#community"
+            class="block px-4 py-3 text-white hover:bg-gray-700 border-b border-gray-600">Community</a>
+          <a href="#home" class="block px-4 py-3 text-white hover:bg-gray-700">Pack</a>
+        </div>
+      </nav>
+
+    </div>
+
+    <!-- Collapsible Mobile Menu -->
+    <nav id="mobile-menu" class="md:hidden hidden">
+      <ul class="space-y-2 px-4 py-3 bg-white shadow">
+        <li><a href="/" class="block px-3 py-2 rounded hover:bg-gray-500">Home</a></li>
+        <li><a href="/about" class="block px-3 py-2 rounded hover:bg-gray-500">About</a></li>
+        <li><a href="/contact" class="block px-3 py-2 rounded hover:bg-gray-500">Contact</a></li>
+      </ul>
+    </nav>
     </div>
   </header>
-
-    <!-- Mobile Menu -->
-    <div id="menu" class="hidden md:hidden bg-gray-800">
-      <a href="#home" class="block px-4 py-2 hover:bg-gray-700">Home</a>
-
-      <a href="#games" class="block px-4 py-2 hover:bg-gray-700">Games</a>
-      <a href="#rosters" class="block px-4 py-2 hover:bg-gray-700">Rosters</a>
-      <a href="#about" class="block px-4 py-2 hover:bg-gray-700">About</a>
-      <a href="#community" class="block px-4 py-2 hover:bg-gray-700">Community</a>
-    </div>
   </nav>
 
-   <!-- Hero -->
-  <header id="home" class="relative bg-black pt-16">
-    <img src="herobg.jpg"
-         alt="Esports Banner" class="w-full h-[600px] object-cover opacity-50">
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-red-500">Hunt Together. Win Together.</h1>
-      <p class="mt-4 max-w-2xl text-lg md:text-xl">Chaos Hunters Esports — empowering boys and girls to compete, dominate, and inspire across multiple titles.</p>
-      <div class="mt-6 flex flex-wrap gap-4 justify-center">
-        <a href="#" class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg">🎥 Watch Matches</a>
-        <a href="#" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold px-6 py-3 rounded-lg">🔥 Join the Hunt</a>
+  <!-- Hero -->
+  <header id="home" class="relative bg-black min-h-screen">
+    <!-- Full viewport background image -->
+    <img src="herobg.jpg" alt="Esports Banner" class="absolute inset-0 w-full h-full object-cover opacity-50">
+
+    <!-- Content overlay -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8">
+      <!-- Main heading -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-red-500 text-center leading-tight">
+        Hunt Together. Win Together.
+      </h1>
+
+      <!-- Subtitle -->
+      <p
+        class="mt-4 max-w-2xl text-base sm:text-lg md:text-xl lg:text-2xl text-center text-gray-200 leading-relaxed px-2">
+        Chaos Hunters Esports — empowering boys and girls to compete, dominate, and inspire across multiple titles.
+      </p>
+
+      <!-- Primary CTAs -->
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md sm:max-w-none">
+        <a href="#"
+          class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors text-center text-sm sm:text-base">
+          🎥 Watch Matches
+        </a>
+        <a href="#"
+          class="bg-gray-800 hover:bg-gray-900 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg transition-colors text-center text-sm sm:text-base">
+          🔥 Join the Hunt
+        </a>
       </div>
 
-      <!-- Be Part of the Pack (moved here) -->
-      <div class="mt-10 bg-gray-900 bg-opacity-80 rounded-xl p-6">
-        <h2 class="text-2xl md:text-3xl font-bold text-red-500 mb-4">Be Part of the Pack</h2>
-        <div class="flex flex-wrap gap-4 justify-center">
-          <a href="#" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg">Follow Our Journey</a>
-          <a href="#" class="bg-gray-800 hover:bg-gray-900 px-6 py-3 rounded-lg">Shop Merch</a>
-          <a href="#" class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg">Apply for Trials</a>
+      <!-- Be Part of the Pack Section -->
+      <div class="mt-12 sm:mt-16 bg-gray-900 bg-opacity-90 rounded-xl p-4 sm:p-6 md:p-8 max-w-4xl w-full mx-auto">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-red-500 mb-4 sm:mb-6 text-center">
+          Be Part of the Pack
+        </h2>
+
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch">
+          <a href="#"
+            class="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 sm:px-6 py-3 rounded-lg transition-colors text-center text-sm sm:text-base flex-1 sm:flex-none">
+            Follow Our Journey
+          </a>
+          <a href="#"
+            class="bg-gray-800 hover:bg-gray-900 text-white font-semibold px-4 sm:px-6 py-3 rounded-lg transition-colors text-center text-sm sm:text-base flex-1 sm:flex-none">
+            Shop Merch
+          </a>
+          <a href="#"
+            class="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 sm:px-6 py-3 rounded-lg transition-colors text-center text-sm sm:text-base flex-1 sm:flex-none">
+            Apply for Trials
+          </a>
         </div>
       </div>
     </div>
@@ -81,18 +147,15 @@
     <h2 class="text-3xl font-bold text-red-500 mb-12 text-center">Games & Divisions</h2>
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
-        <img src="valorant.webp"
-             class="rounded-lg mb-4 w-full h-44 object-cover" alt="Valorant">
+        <img src="valorant.webp" class="rounded-lg mb-4 w-full h-44 object-cover" alt="Valorant">
         <p><strong>Valorant:</strong> Boys & Girls</p>
       </div>
       <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
-        <img src="freefire.jpg"
-             class="rounded-lg mb-4 w-full h-44 object-cover" alt="Free Fire">
+        <img src="freefire.jpg" class="rounded-lg mb-4 w-full h-44 object-cover" alt="Free Fire">
         <p><strong>Free Fire:</strong> Boys & Girls</p>
       </div>
       <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
-        <img src="bgmi.png"
-             class="rounded-lg mb-4 w-full h-44 object-cover" alt="BGMI">
+        <img src="bgmi.png" class="rounded-lg mb-4 w-full h-44 object-cover" alt="BGMI">
         <p><strong>BGMI:</strong> Boys</p>
       </div>
     </div>
@@ -105,89 +168,106 @@
       <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
         <h3 class="text-xl font-semibold mb-3">Valorant (Boys)</h3>
         <ul class="list-disc pl-6 space-y-1 text-gray-300">
-          <li>Reaper – IGL</li><li>Hex – Duelist</li><li>Specter – Controller</li><li>Rogue – Sentinel</li><li>Pulse – Initiator</li>
+          <li>Reaper – IGL</li>
+          <li>Hex – Duelist</li>
+          <li>Specter – Controller</li>
+          <li>Rogue – Sentinel</li>
+          <li>Pulse – Initiator</li>
         </ul>
       </div>
       <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
         <h3 class="text-xl font-semibold mb-3">Valorant (Girls)</h3>
         <ul class="list-disc pl-6 space-y-1 text-gray-300">
-          <li>Luna – Duelist</li><li>Ivy – Controller</li><li>Vixen – Sentinel</li><li>Nova – Initiator</li>
+          <li>Luna – Duelist</li>
+          <li>Ivy – Controller</li>
+          <li>Vixen – Sentinel</li>
+          <li>Nova – Initiator</li>
         </ul>
       </div>
       <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
         <h3 class="text-xl font-semibold mb-3">Free Fire (Mixed)</h3>
         <ul class="list-disc pl-6 space-y-1 text-gray-300">
-          <li>Blaze – Rusher</li><li>Rex – Sniper</li><li>Mira – Support</li><li>Kai – Entry</li>
+          <li>Blaze – Rusher</li>
+          <li>Rex – Sniper</li>
+          <li>Mira – Support</li>
+          <li>Kai – Entry</li>
         </ul>
       </div>
       <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
         <h3 class="text-xl font-semibold mb-3">BGMI (Boys)</h3>
         <ul class="list-disc pl-6 space-y-1 text-gray-300">
-          <li>Hunter – IGL</li><li>Bullet – Fragger</li><li>Ghost – Support</li><li>Venom – Scout</li>
+          <li>Hunter – IGL</li>
+          <li>Bullet – Fragger</li>
+          <li>Ghost – Support</li>
+          <li>Venom – Scout</li>
         </ul>
       </div>
     </div>
   </section>
-    <!-- Achievements -->
+  <!-- Achievements -->
   <section id="achievements" class="bg-gray-800 text-white py-20 px-6">
     <div class="max-w-6xl mx-auto text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-red-500">Achievements</h2>
       <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
-        Our journey has just begun. We are actively participating in scrims, online qualifiers, and community events — 
+        Our journey has just begun. We are actively participating in scrims, online qualifiers, and community events —
         focused on growth, training, and building synergy to dominate future tournaments.
       </p>
     </div>
 
     <!-- Achievements Grid -->
     <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-      
+
       <!-- Card 1 -->
       <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transform transition">
         <h3 class="text-xl font-semibold text-red-400 mb-3">Scrims & Qualifiers</h3>
-        <p class="text-gray-300">Regular participation in BGMI, Valorant, and Free Fire qualifiers to sharpen team synergy and strategies.</p>
+        <p class="text-gray-300">Regular participation in BGMI, Valorant, and Free Fire qualifiers to sharpen team
+          synergy and strategies.</p>
       </div>
-      
+
       <!-- Card 2 -->
       <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transform transition">
         <h3 class="text-xl font-semibold text-red-400 mb-3">Content & Livestreams</h3>
-        <p class="text-gray-300">Growing presence on Twitch, YouTube, and Discord through high-quality streams and fan engagement.</p>
+        <p class="text-gray-300">Growing presence on Twitch, YouTube, and Discord through high-quality streams and fan
+          engagement.</p>
       </div>
-      
+
       <!-- Card 3 -->
       <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transform transition">
         <h3 class="text-xl font-semibold text-red-400 mb-3">Future Tournaments</h3>
-        <p class="text-gray-300">Focused on building rosters and training for national & international esports tournaments in 2025 and beyond.</p>
+        <p class="text-gray-300">Focused on building rosters and training for national & international esports
+          tournaments in 2025 and beyond.</p>
       </div>
     </div>
   </section>
 
 
-    <!-- About -->
+  <!-- About -->
   <section id="about" class="bg-gray-900 py-20 px-6">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      
+
       <!-- Left Side: Text -->
       <div class="text-left">
         <h2 class="text-3xl font-bold text-red-500 mb-6">About Us</h2>
-        <p class="mb-4">Founded in 2022, Chaos Hunters Esports was born from a shared passion for competitive gaming. Our goal is to create an esports organization where both boys and girls can showcase their skills, compete with the best, and inspire the next generation of gamers.</p>
-        
-        <p class="mb-2"><strong>Vision:</strong> To become one of the most respected and inclusive esports organizations.</p>
-        
+        <p class="mb-4">Founded in 2022, Chaos Hunters Esports was born from a shared passion for competitive gaming.
+          Our goal is to create an esports organization where both boys and girls can showcase their skills, compete
+          with the best, and inspire the next generation of gamers.</p>
+
+        <p class="mb-2"><strong>Vision:</strong> To become one of the most respected and inclusive esports
+          organizations.</p>
+
         <p class="mb-2"><strong>Mission:</strong></p>
         <ul class="list-disc pl-6 text-gray-300 space-y-1">
           <li>Build rosters for Valorant, Free Fire, and BGMI</li>
           <li>Provide opportunities for talented players of all genders</li>
           <li>Create a global community that celebrates esports culture</li>
         </ul>
-        
+
         <p class="mt-4"><strong>Values:</strong> Inclusivity • Teamwork • Passion • Growth</p>
       </div>
-      
+
       <!-- Right Side: Image -->
       <div class="flex justify-center">
-        <img src="about2.jpg"
-             alt="Chaos Hunters Team"
-             class="rounded-xl shadow-lg object-cover w-full h-[400px]">
+        <img src="about2.jpg" alt="Chaos Hunters Team" class="rounded-xl shadow-lg object-cover w-full h-[400px]">
       </div>
     </div>
   </section>
@@ -205,47 +285,108 @@
     </div>
   </section>
   <!-- Footer -->
-  <footer class="bg-black py-6 border-t border-gray-800">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between px-6">
-      
-      <!-- Left Side: Esports Info -->
-      <div class="text-center md:text-left space-y-2">
-        <p class="font-bold text-white">Chaos Hunters Esports</p>
-        <p>Email: <a href="mailto:ChaosHuntersEsports@gmail.com" class="text-red-500">ChaosHuntersEsports@gmail.com</a></p>
-        <p>Contact: 8919676308</p>
-        <p>Location: Hyderabad, Telangana, India</p>
-        <p class="text-sm text-gray-500">&copy; 2025 Chaos Hunters Esports. All Rights Reserved.</p>
+  <footer class="bg-black py-6 md:py-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+      <!-- Mobile: Stacked Layout, Desktop: Side by Side -->
+      <div class="flex flex-col space-y-6 md:flex-row md:items-start md:justify-between md:space-y-0">
+
+        <!-- Left Side: Esports Info -->
+        <div class="text-center md:text-left space-y-3">
+          <h3 class="font-bold text-white text-lg">Chaos Hunters Esports</h3>
+
+          <!-- Contact Information - Better spacing on mobile -->
+          <div class="space-y-2 text-sm md:text-base">
+            <p>
+              <span class="text-gray-300">Email:</span>
+              <a href="mailto:ChaosHuntersEsports@gmail.com"
+                class="text-red-500 hover:text-red-400 transition-colors break-all">
+                ChaosHuntersEsports@gmail.com
+              </a>
+            </p>
+            <p class="text-gray-300">
+              <span class="text-gray-300">Contact:</span>
+              <a href="tel:8919676308" class="text-white hover:text-red-500 transition-colors">
+                8919676308
+              </a>
+            </p>
+            <p class="text-gray-300">
+              <span class="text-gray-300">Location:</span>
+              <span class="text-white">Hyderabad, Telangana, India</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Side: Talentronaut -->
+        <div class="flex flex-col items-center space-y-3 pt-4 border-t border-gray-700 md:border-t-0 md:pt-0">
+          <!-- Logo -->
+          <img src="https://img.icons8.com/ios-filled/100/ff0000/rocket.png" alt="Talentronaut Logo"
+            class="w-8 h-8 md:w-10 md:h-10 object-contain">
+
+          <!-- Text -->
+          <p class="text-xs md:text-sm text-gray-400 text-center leading-relaxed">
+            Designed by
+            <span class="text-red-500 font-semibold block sm:inline">
+              Talentronaut Technologies
+            </span>
+          </p>
+        </div>
       </div>
 
-      <!-- Right Side: Talentronaut -->
-      <div class="flex flex-col items-center mt-6 md:mt-0">
-        <!-- Logo -->
-        <img src="https://img.icons8.com/ios-filled/100/ff0000/rocket.png" 
-             alt="Talentronaut Logo" class="w-10 h-10 object-contain mb-2">
-        <!-- Text -->
-        <p class="text-sm text-gray-400 text-center">
-          Designed by <span class="text-red-500 font-semibold">Talentronaut Technologies</span>
+      <!-- Copyright - Separate section on mobile for better spacing -->
+      <div class="mt-6 pt-4 border-t border-gray-700">
+        <p class="text-xs md:text-sm text-gray-500 text-center">
+          &copy; 2025 Chaos Hunters Esports. All Rights Reserved.
         </p>
       </div>
     </div>
   </footer>
 
-    <!-- Floating Logo Icon -->
+  <!-- Floating Logo Icon -->
   <a href="https://www.talentronaut.in/" target="_blank" rel="noopener noreferrer"
-     class="fixed bottom-6 right-6 bg-white hover:bg-gray-100 p-4 rounded-full shadow-xl transition transform hover:scale-105">
+    class="fixed bottom-6 right-6 bg-white hover:bg-gray-100 p-4 rounded-full shadow-xl transition transform hover:scale-105">
     <!-- Replace the src below with your Talentronaut logo -->
-    <img src="logo.jpg" 
-         alt="Talentronaut Logo" class="w-12 h-12 object-contain">
+    <img src="logo.jpg" alt="Talentronaut Logo" class="w-12 h-12 object-contain">
   </a>
 
-  <!-- Script for Mobile Menu -->
   <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+    // Toggle mobile menu
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      function toggleMenu() {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+
+        // Toggle menu visibility
+        mobileMenu.classList.toggle('hidden');
+
+        // Update aria-expanded for accessibility
+        menuButton.setAttribute('aria-expanded', !isExpanded);
+      }
+
+      // Add click event listener
+      menuButton.addEventListener('click', toggleMenu);
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function (event) {
+        if (!menuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+          mobileMenu.classList.add('hidden');
+          menuButton.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          mobileMenu.classList.add('hidden');
+          menuButton.setAttribute('aria-expanded', 'false');
+        }
+      });
     });
+
   </script>
 
 </body>
+
 </html>
